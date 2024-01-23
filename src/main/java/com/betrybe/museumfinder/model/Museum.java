@@ -1,5 +1,8 @@
 package com.betrybe.museumfinder.model;
 
+/**
+ * Class Museum model.
+ */
 public class Museum {
 
   private Long id;
