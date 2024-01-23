@@ -10,7 +10,7 @@ public class Museum {
   private String subject;
   private String url;
   private Coordinate coordinate;
-  private Long legacyI;
+  private Long legacyId;
 
   public Long getId() {
     return id;
@@ -76,11 +76,11 @@ public class Museum {
     this.coordinate = coordinate;
   }
 
-  public Long getLegacyI() {
-    return legacyI;
+  public Long getLegacyId() {
+    return legacyId;
   }
 
-  public void setLegacyI(Long legacyI) {
-    this.legacyI = legacyI;
+  public void setLegacyId(Long legacyI) {
+    this.legacyId = legacyI;
   }
 }
