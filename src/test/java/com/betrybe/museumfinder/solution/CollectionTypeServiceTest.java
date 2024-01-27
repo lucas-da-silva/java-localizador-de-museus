@@ -27,6 +27,7 @@ public class CollectionTypeServiceTest {
   private MuseumFakeDatabase database;
 
   @Test
+  @DisplayName("Quando chamado com um tipo de coleção, retorna a contagem correta")
   void testOneCollectionType() {
     String collectionType = "hist";
     long totalCount = 387;
@@ -45,6 +46,7 @@ public class CollectionTypeServiceTest {
   }
 
   @Test
+  @DisplayName("Quando chamado com mais de um tipo de coleção, retorna a contagem correta")
   void testMultipleCollectionType() {
     String typesList = "hist,imag";
     String[] collectionType = typesList.split(",");
@@ -69,6 +71,7 @@ public class CollectionTypeServiceTest {
   }
 
   @Test
+  @DisplayName("Retorna a contagem com valor igual a 0 quando não encontrado o tipo de coleção")
   void testNotFoundCollectionType() {
     String collectionType = "a";
     long totalCount = 0;
