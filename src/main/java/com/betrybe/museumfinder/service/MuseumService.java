@@ -30,12 +30,12 @@ public class MuseumService implements MuseumServiceInterface {
       throw new InvalidCoordinateException();
     }
 
-    Optional<Museum> optMuseum = database.getClosestMuseum(coordinate, maxDistance);
+    Optional<Museum> museum = database.getClosestMuseum(coordinate, maxDistance);
 
-    if (optMuseum.isEmpty()) {
+    if (museum.isEmpty()) {
       throw new MuseumNotFoundException();
     }
-    return optMuseum.get();
+    return museum.get();
   }
 
   @Override
@@ -47,7 +47,11 @@ public class MuseumService implements MuseumServiceInterface {
   }
 
   @Override
-  public Museum getMuseum(Long id) {
-    return null;
+  public Museum getMuseum(Long id) throws MuseumNotFoundException {
+    Optional<Museum> museum = database.getMuseum(id);
+    if (museum.isEmpty()) {
+      throw new MuseumNotFoundException();
+    }
+    return museum.get();
   }
 }
